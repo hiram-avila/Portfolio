@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 export default function Portfolio() {
   const ref = useRef();
@@ -9,12 +9,17 @@ export default function Portfolio() {
   // Referencias para las secciones
   const aboutRef = useRef();
   const projectsRef = useRef();
+  const certificationsRef = useRef();
   const contactRef = useRef();
 
   // Animaciones de aparición
-  const aboutInView = useInView(aboutRef, { once: true, margin: "-100px" });
-  const projectsInView = useInView(projectsRef, { once: true, margin: "-100px" });
-  const contactInView = useInView(contactRef, { once: true, margin: "-100px" });
+  const aboutInView = useInView(aboutRef, { once: false, margin: "-200px" });
+  const projectsInView = useInView(projectsRef, { once: false, margin: "-200px" });
+  const certificationsInView = useInView(certificationsRef, { once: false, margin: "-200px" });
+  const contactInView = useInView(contactRef, { once: false, margin: "-200px" });
+
+  // Estado para el modal del CV
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900">
@@ -24,6 +29,7 @@ export default function Portfolio() {
         <div className="hidden md:flex gap-6">
           <a href="#about" className="hover:text-gray-600 transition-colors text-lg">Sobre mí</a>
           <a href="#projects" className="hover:text-gray-600 transition-colors text-lg">Proyectos</a>
+          <a href="#certifications" className="hover:text-gray-600 transition-colors text-lg">Certificaciones</a>
           <a href="#contact" className="hover:text-gray-600 transition-colors text-lg">Contacto</a>
         </div>
       </nav>
@@ -39,6 +45,22 @@ export default function Portfolio() {
             Hola, soy Juan
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 font-light">Desarrollador Full Stack</p>
+          <div className="mt-8 flex justify-center gap-4">
+            <a
+              href="https://github.com/tuusuario" // Reemplaza con tu enlace de GitHub
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300"
+            >
+              Ver GitHub
+            </a>
+            <button
+              onClick={() => setIsCVModalOpen(true)}
+              className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300"
+            >
+              Previsualizar CV
+            </button>
+          </div>
         </div>
       </section>
 
@@ -91,8 +113,38 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
+      {/* Sección Certificaciones */}
+      <section id="certifications" ref={certificationsRef} className="py-20 px-6 bg-white">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={certificationsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-6xl mx-auto"
+        >
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Certificaciones AWS</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "AWS Certified Solutions Architect", image: "https://via.placeholder.com/400x250" },
+              { title: "AWS Certified Developer", image: "https://via.placeholder.com/400x250" },
+              { title: "AWS Certified Cloud Practitioner", image: "https://via.placeholder.com/400x250" },
+            ].map((certification, index) => (
+              <motion.div 
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="h-48 bg-[url('https://via.placeholder.com/400x250')] bg-cover bg-center"/>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">{certification.title}</h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
       {/* Sección Contacto */}
-      <section id="contact" ref={contactRef} className="py-20 px-6 bg-white">
+      <section id="contact" ref={contactRef} className="py-20 px-6 bg-gray-50">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={contactInView ? { opacity: 1, y: 0 } : {}}
@@ -117,6 +169,25 @@ export default function Portfolio() {
           </form>
         </motion.div>
       </section>
+
+      {/* Modal para previsualizar el CV */}
+      {isCVModalOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg w-full max-w-3xl relative">
+            <button
+              onClick={() => setIsCVModalOpen(false)}
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+            >
+              &times;
+            </button>
+            <iframe
+              src="/ruta-a-tu-cv.pdf" // Reemplaza con la ruta a tu CV
+              className="w-full h-[80vh]"
+              title="Previsualización del CV"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
