@@ -47,7 +47,7 @@ export default function Portfolio() {
           <p className="text-xl md:text-2xl text-gray-600 font-light">Desarrollador Full Stack</p>
           <div className="mt-8 flex justify-center gap-4">
             <a
-              href="https://github.com/tuusuario" // Reemplaza con tu enlace de GitHub
+              href="https://github.com/hiram-avila" // Reemplaza con tu enlace de GitHub
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300"
@@ -114,34 +114,7 @@ export default function Portfolio() {
       </section>
 
       {/* Sección Certificaciones */}
-      <section id="certifications" ref={certificationsRef} className="py-20 px-6 bg-white">
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          animate={certificationsInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-6xl mx-auto"
-        >
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Certificaciones AWS</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "AWS Certified Solutions Architect", image: "https://via.placeholder.com/400x250" },
-              { title: "AWS Certified Developer", image: "https://via.placeholder.com/400x250" },
-              { title: "AWS Certified Cloud Practitioner", image: "https://via.placeholder.com/400x250" },
-            ].map((certification, index) => (
-              <motion.div 
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="h-48 bg-[url('https://via.placeholder.com/400x250')] bg-cover bg-center"/>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">{certification.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
+ 
 
       {/* Sección Contacto */}
       <section id="contact" ref={contactRef} className="py-20 px-6 bg-gray-50">
