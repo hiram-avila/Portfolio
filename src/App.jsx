@@ -154,7 +154,7 @@ export default function Portfolio() {
               &times;
             </button>
             <iframe
-              src="/ruta-a-tu-cv.pdf" // Reemplaza con la ruta a tu CV
+              src="/mi-cv.pdf" // Reemplaza con la ruta a tu CV
               className="w-full h-[80vh]"
               title="Previsualización del CV"
             />
