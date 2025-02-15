@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 
 const CertificationsSection = () => {
   const certificationsRef = useRef(null);
-  const inView = useInView(certificationsRef, { once: false, margin: "-200px" });
+  const inView = useInView(certificationsRef, { once: false, margin: "-100px" });
 
   return (
     <section id="certifications" ref={certificationsRef} className="py-20 px-6 bg-white">

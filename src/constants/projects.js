@@ -1,17 +1,19 @@
 const projects = [
   {
     id: 1,
-    projectName: "Proyecto 1",
-    projectDescription: "Descripción del proyecto 1",
+    projectName: "Plataforma de E-learning",
+    projectDescription: "Una plataforma educativa con cursos interactivos.",
     imageUrl: "https://picsum.photos/400/300",
-    tags: ["React", "Node.js", "AWS"], // Agrega tags
+    architectureImageUrl: "/src/assets/images/architecture/proyecto1.png", // Ruta de la imagen
+    tags: ["React", "Node.js", "AWS"],
   },
   {
     id: 2,
-    projectName: "Proyecto 2",
-    projectDescription: "Descripción del proyecto 2",
+    projectName: "App de Gestión de Tareas",
+    projectDescription: "Una aplicación para organizar tareas diarias.",
     imageUrl: "https://picsum.photos/400/301",
-    tags: ["React Native", "Firebase"], // Agrega tags
+    architectureImageUrl: "/src/assets/images/architecture/proyecto1.png", // Ruta de la imagen
+    tags: ["React Native", "Firebase"],
   },
   // Agrega más proyectos...
 ];

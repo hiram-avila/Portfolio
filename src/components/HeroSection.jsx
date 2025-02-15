@@ -33,6 +33,16 @@ const HeroSection = ({ onCVPreview }) => {
             Previsualizar CV
           </button>
         </div>
+        <div className="mt-4">
+          <a
+            href="https://www.linkedin.com/in/juan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300"
+          >
+            Ver LinkedIn
+          </a>
+        </div>
       </div>
     </section>
   );
