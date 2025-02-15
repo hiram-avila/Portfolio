@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { CodeBracketIcon } from '@heroicons/react/24/solid'; // Ícono de GitHub
+import { FaGithub } from 'react-icons/fa';
 import projects from '../constants/projects'; // Importa los proyectos
 
 const ProjectsSection = () => {
@@ -82,13 +82,13 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 flex items-center justify-center gap-2 flex-1"
-                  >
-                    <CodeBracketIcon className="w-5 h-5" /> {/* Ícono de GitHub */}
-                    <span>Ver Codigo</span>
-                  </button>
+                <button
+  onClick={() => setSelectedProject(project)}
+  className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 flex items-center justify-center gap-2 flex-1"
+>
+  <FaGithub className="w-5 h-5" /> {/* Ícono de GitHub */}
+  <span>Ver proyecto</span>
+</button>
                   <button
                     onClick={() => setSelectedArchitecture(project)}
                     className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 flex-1"
