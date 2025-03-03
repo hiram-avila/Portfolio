@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import ProjectCard from "./components/ProjectCard";
 import ProjectsSection from "./components/ProjectsSection";
 import ScrollParallax from "./components/ScrollParallax";
+import ExperienceSection from "./components/ExperienceSection";
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
       <ProjectCard />
       <ProjectsSection />
       <ScrollParallax />
-      <ContactSection />
+      <ExperienceSection />
       <CVModal />
     </div>
   );
