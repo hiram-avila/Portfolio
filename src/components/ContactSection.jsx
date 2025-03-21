@@ -14,7 +14,7 @@ const ContactSection = () => {
     <section 
       id="contact" 
       ref={contactRef} 
-      className="py-20 px-6 bg-gray-50"
+      className="py-20 px-6 bg-gray-50 absolute"
     >
       <motion.div 
         initial="hidden"

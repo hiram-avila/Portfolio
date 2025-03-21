@@ -88,7 +88,19 @@ const ParticlesComponent = (props) => {
 
   // Renderizar el componente de partículas
   if (init) {
-    return <Particles id={props.id} options={options} />;
+    return (
+      <Particles
+        id={props.id}
+        options={options}
+        style={{
+          position: 'absolute', // Asegura que el canvas esté posicionado correctamente
+          top: 0,
+          left: 0,
+          width: '100%', // Ocupa el 100% del ancho del contenedor
+          height: '100%', // Ocupa el 100% de la altura del contenedor
+        }}
+      />
+    );
   }
 
   return null; // No renderizar nada hasta que el motor esté listo

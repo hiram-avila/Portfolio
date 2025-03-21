@@ -6,7 +6,7 @@ const AboutSection = () => {
   const inView = useInView(aboutRef, { once: false, margin: "-200px" });
 
   return (
-    <section id="about" ref={aboutRef} className="py-20 px-6 md:px-20 bg-white">
+    <section id="about" ref={aboutRef} className="py-20 px-6 md:px-20 bg-white ">
       <motion.div 
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}

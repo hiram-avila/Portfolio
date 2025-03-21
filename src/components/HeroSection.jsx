@@ -4,14 +4,14 @@ import ParticlesComponent from './ParticlesComponent'; // Importar el componente
 
 const HeroSection = ({ onCVPreview }) => {
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Fondo con partículas (solo en el HeroSection) */}
-      <div className="absolute inset-0 z-0">
+    <section className="h-screen flex items-center justify-center relative overflow-hidden z-10">
+      {/* Fondo con partículas (z-index bajo) */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <ParticlesComponent id="tsparticles" />
       </div>
 
-      {/* Contenido principal */}
-      <div className="text-center z-10 p-4">
+      {/* Contenido principal (z-index alto) */}
+      <div className="text-center z-20 p-4">
         {/* Título con estilo mejorado */}
         <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white relative inline-block">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-100">
