@@ -19,7 +19,7 @@ const ParticlesComponent = (props) => {
     () => ({
       background: {
         color: {
-          value: "#1E2F97", // Color de fondo (azul oscuro)
+          value: "#d95a16", // Color de fondo (azul oscuro)
         },
       },
       fpsLimit: 120, // Límite de fotogramas por segundo
@@ -27,11 +27,11 @@ const ParticlesComponent = (props) => {
         events: {
           onClick: {
             enable: true,
-            mode: "repulse", // Las partículas se repelen al hacer clic
+            mode: "grab", // Las partículas se repelen al hacer clic
           },
           onHover: {
             enable: true,
-            mode: 'grab', // Las partículas se agrupan al pasar el mouse
+            mode: 'repulse', // Las partículas se agrupan al pasar el mouse
           },
         },
         modes: {
@@ -50,7 +50,7 @@ const ParticlesComponent = (props) => {
         },
         links: {
           color: "#FFFFFF", // Color de los enlaces entre partículas
-          distance: 150, // Distancia máxima entre partículas para crear enlaces
+          distance: 110, // Distancia máxima entre partículas para crear enlaces
           enable: true,
           opacity: 0.3, // Opacidad de los enlaces
           width: 1, // Grosor de los enlaces
@@ -62,14 +62,14 @@ const ParticlesComponent = (props) => {
             default: "bounce", // Las partículas rebotan en los bordes
           },
           random: true,
-          speed: 1, // Velocidad de movimiento
+          speed: 2, // Velocidad de movimiento
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 150, // Número de partículas
+          value: 350, // Número de partículas
         },
         opacity: {
           value: 1.0, // Opacidad de las partículas
@@ -97,7 +97,7 @@ const ParticlesComponent = (props) => {
           top: 0,
           left: 0,
           width: '100%', // Ocupa el 100% del ancho del contenedor
-          height: '100%', // Ocupa el 100% de la altura del contenedor
+          height: '10%', // Ocupa el 100% de la altura del contenedor
         }}
       />
     );

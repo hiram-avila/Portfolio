@@ -19,7 +19,7 @@ const ProjectsSection = () => {
     : projects;
 
   return (
-    <section id="projects" ref={projectsRef} className="py-20 px-6 bg-gray-50 ">
+    <section id="projects" ref={projectsRef} className="pb-20 pt-10 px-6 bg-gray-50 relative z-30">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-6xl font-bold text-center mb-12 text-gray-900 font-bebas">
           Proyectos
@@ -62,7 +62,7 @@ const ProjectsSection = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-30"
             >
               <div className="relative h-48">
                 <img
@@ -82,16 +82,16 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                <button
-  onClick={() => setSelectedProject(project)}
-  className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 flex items-center justify-center gap-2 flex-1"
->
-  <FaGithub className="w-5 h-5" /> {/* Ícono de GitHub */}
-  <span>Ver proyecto</span>
-</button>
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 flex items-center justify-center gap-2 flex-1 z-30"
+                  >
+                    <FaGithub className="w-5 h-5" /> {/* Ícono de GitHub */}
+                    <span>Ver proyecto</span>
+                  </button>
                   <button
                     onClick={() => setSelectedArchitecture(project)}
-                    className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 flex-1"
+                    className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 flex-1 z-30"
                   >
                     Arquitectura
                   </button>
@@ -105,7 +105,7 @@ const ProjectsSection = () => {
       {/* Modal para detalles del proyecto */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl w-full max-w-2xl overflow-hidden shadow-2xl">
+          <div className="bg-white rounded-xl w-full max-w-2xl overflow-hidden shadow-2xl relative z-50">
             <div className="relative h-64">
               <img
                 src={selectedProject.imageUrl}
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
       {/* Modal para previsualizar la arquitectura */}
       {selectedArchitecture && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl w-full max-w-4xl overflow-hidden shadow-2xl">
+          <div className="bg-white rounded-xl w-full max-w-4xl overflow-hidden shadow-2xl relative z-50">
             <div className="p-6 border-b border-gray-200">
               <h3 className="text-2xl font-bold text-gray-900">
                 Arquitectura de {selectedArchitecture.projectName}

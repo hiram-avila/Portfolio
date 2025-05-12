@@ -4,7 +4,7 @@ export default function ProjectCard({ projectName, projectDescription, imageUrl 
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 z-30"
     >
       <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className="p-6">

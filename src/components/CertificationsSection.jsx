@@ -6,7 +6,7 @@ const CertificationsSection = () => {
   const inView = useInView(certificationsRef, { once: false, margin: "-100px" });
 
   return (
-    <section id="certifications" ref={certificationsRef} className="py-20 px-6 bg-white">
+    <section id="certifications" ref={certificationsRef} className="py-20 px-6 bg-white relative z-30">
       <motion.div 
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}

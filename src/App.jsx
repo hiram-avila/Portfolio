@@ -20,7 +20,7 @@ const App = () => {
       <AboutSection />
       </motion.div>
       <AnimatedSection />
-      <CertificationsSection />
+     
       <ProjectCard />
       <ProjectsSection />
       <ScrollParallax />
