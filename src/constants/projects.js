@@ -19,7 +19,7 @@ const projects = [
   {
     id: 3,
     projectName: "Arquitectura de Microservicios con AWS",
-    projectDescription: "Sistema backend desacoplado mediante microservicios desplegados en ECS con balanceo de carga, comunicación segura vía API Gateway y escalabilidad automática. Incluye integración continua, monitoreo y despliegue sin downtime.",
+    projectDescription: "Sistema backend desacoplado mediante microservicios desplegados en ECS con balanceo de carga, comunicación segura vía API Gateway y escalabilidad automática. Incluye integración continua.",
     imageUrl: "/src/assets/images/screenshots/microservicios.png",
     architectureImageUrl: "/src/assets/images/architecture/proyecto1.png", // Ruta de la imagen
     tags: ["AWS", "ECS", "API Gateway", "Node.js", "Docker", "CI/CD", "JWT", "Microservices", ],

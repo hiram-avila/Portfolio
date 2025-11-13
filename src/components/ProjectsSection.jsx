@@ -62,7 +62,6 @@ const ProjectsSection = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-30"
             >
               <div className="relative h-48">
                 <img

@@ -7,12 +7,12 @@ const experienceData = [
     id: 1,
     company: "Plataforma de Educación Online (Clientes múltiples)",
     role: "Arquitecto Fullstack",
-    duration: "2023 - Presente",
+    duration: "2023 - 2025",
     achievements: [
       "Liderazgo técnico en plataforma con 150k+ usuarios mensuales",
       "Diseño de arquitectura escalable con microservicios (Node.js + React)",
       "Implementación de sistema CI/CD reduciendo deployments en 40%",
-      "Optimización de costos AWS en 25% mediante auto-scaling"
+      "Optimización de costos AWS  mediante auto-scaling"
     ],
     tech: ["AWS EC2/S3", "Docker", "JWT", "React", "PostgreSQL"],
     icon: <FaRocket className="w-6 h-6 text-orange-600" />,
